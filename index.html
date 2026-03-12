@@ -1,67 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>نظام الإدارة المهنية</title>
     <div id="app">
-  <header>
-    <h1>تسيير المهام</h1>
-    <div class="search-bar">
-      <input type="text" id="globalSearch" placeholder="بحث برقم المحضر أو الاسم..." oninput="render()">
-    </div>
-    <nav>
-      <button onclick="showSection('violations')">المخالفات</button>
-      <button onclick="showSection('documents')">القطع الإدارية</button>
-      <button onclick="showSection('personal')">معلومات شخصية</button>
-      <button onclick="showSection('archive')">الأرشيف</button>
-    </nav>
-  </header>
+      <header>
+        <h1>تسيير المهام</h1>
+       
+        <nav>
+          <button onclick="showSection('violations')">المخالفات</button>
+          <button onclick="showSection('documents')">القطع الإدارية</button>
+          <button onclick="showSection('personal')">معلومات شخصية</button>
+          <button onclick="showSection('archive')">الأرشيف</button>
+        </nav>
+      </header>
 
-  <section id="violations-section" class="active">
-    <h3>إضافة مخالفة جديدة</h3>
-    <div class="input-form">
-      <input type="text" id="vName" placeholder="اسم المخالف">
-      <input type="text" id="vReport" placeholder="رقم المحضر">
-      <input type="date" id="vDate">
-      <button class="add-btn" onclick="addViolation()">إضافة للسجلات</button>
-    </div>
-    <div id="vList"></div>
-  </section>
-
-  <section id="documents-section">
-    <h3>تسجيل القطع الإدارية</h3>
-   <div class="input-form">
-  <input type="text" id="docTitle" placeholder="اسم القطعة">
-  <input type="date" id="docReceived" title="تاريخ الاستلام">
-  <input type="date" id="docSub" title="تاريخ التسليم">
-  <textarea id="docNotes" placeholder="ملاحظات إضافية عن القطعة..." style="margin-top:5px; padding:8px; border-radius:5px; border:1px solid #ddd;"></textarea>
-  <button class="add-btn" onclick="addDocument()">تسجيل قطعة</button>
-</div>
-    <div id="docList"></div>
-  </section>
-
-  <section id="personal-section">
-    <h3>المعلومات الشخصية</h3>
-    <div class="input-form">
-      <input type="text" id="pTitle" placeholder="عنوان (ترقية، تعيين...)">
-      <button class="add-btn" onclick="addPersonal()">إضافة</button>
-    </div>
-    <div id="pList"></div>
-  </section>
-
-  <section id="archive-section">
-    <h3>الأرشيف (السجلات المكتملة)</h3>
-    <div id="aList"></div>
-  </section>
-</div>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <div id="app">
+      <section id="violations-section" class="active">
+        <h3>إضافة مخالفة جديدة</h3>
+        <div class="input-form">
+          <input type="text" id="vName" placeholder="اسم المخالف" />
+          <input type="text" id="vReport" placeholder="رقم المحضر" />
+          <input type="date" id="vDate" />
+          <button class="add-btn" onclick="addViolation()">
+            إضافة للسجلات
+          </button>
         </div>
+        <div id="vList"></div>
+      </section>
+
+      <section id="documents-section">
+        <h3>تسجيل القطع الإدارية</h3>
+        <div class="input-form">
+          <input type="text" id="docTitle" placeholder="اسم القطعة" />
+          <input type="date" id="docReceived" title="تاريخ الاستلام" />
+          <input type="date" id="docSub" title="تاريخ التسليم" />
+          <textarea
+            id="docNotes"
+            placeholder="ملاحظات إضافية عن القطعة..."
+            style="
+              margin-top: 5px;
+              padding: 8px;
+              border-radius: 5px;
+              border: 1px solid #ddd;
+            "
+          ></textarea>
+          <button class="add-btn" onclick="addDocument()">تسجيل قطعة</button>
+        </div>
+        <div id="docList"></div>
+      </section>
+
+      <section id="personal-section">
+        <h3>المعلومات الشخصية</h3>
+        <div class="input-form">
+          <input
+            type="text"
+            id="pTitle"
+            placeholder="عنوان (ترقية، تعيين...)"
+          />
+          <button class="add-btn" onclick="addPersonal()">إضافة</button>
+        </div>
+        <div id="pList"></div>
+      </section>
+
+      <section id="archive-section">
+        <h3>الأرشيف (السجلات المكتملة)</h3>
+        <div id="aList"></div>
+      </section>
+    </div>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app"></div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
+
